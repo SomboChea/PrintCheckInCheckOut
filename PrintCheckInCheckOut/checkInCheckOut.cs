@@ -49,13 +49,20 @@ namespace PrintCheckInCheckOut
                 
                 return true;
             }
+
+            if (keyData == (Keys.Control | Keys.X))
+            {
+                Application.Exit();
+
+                return true;
+            }
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
         //Set document for print :
         private void printResult_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(txtRes.Text, new Font("Times New Roman", 25, FontStyle.Regular), Brushes.Black, 20, 20);
+            e.Graphics.DrawString(txtRes.Text, new Font("Times New Roman", 12, FontStyle.Regular), Brushes.Black,0,0);
         }
 
         //Button for Printing Document here :
@@ -109,7 +116,6 @@ namespace PrintCheckInCheckOut
             totalTime = totalMin;
             int hour = t.tHour(totalMin);
             int min = t.tMin(totalMin);
-            MessageBox.Show(hour+"\r\n"+min);
 
             if (totalMin >= 120)
             {
@@ -133,8 +139,37 @@ namespace PrintCheckInCheckOut
             res += "NOTE * : FREE 2 HOURS\r\n";
             res += "------------------------------------------------\r\n";
             res += "Pay Time : " + stHour.min2Day(payTime) + "\r\n";
-            res += "Total Pay : " + pay;
+            res += "Total Pay : " + pay + " Riel";
             txtRes.Text = res;
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            previewDocument.Document = printResult;
+            previewDocument.ShowDialog();
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogPrint.Document = document;
+            if (dialogPrint.ShowDialog() == DialogResult.OK)
+            {
+                document.Print();
+            }
+            else
+            {
+                MessageBox.Show("Error while printing...!");
+            }
+        }
+
+        private void exitCtrlXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by SamboChea\r\nVersion : 0.0.0.1");
         }
 
         //Button for CheckIn has here :

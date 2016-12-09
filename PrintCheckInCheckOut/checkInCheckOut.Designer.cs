@@ -40,13 +40,20 @@
             this.printResult = new System.Drawing.Printing.PrintDocument();
             this.lbTimer = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 85);
+            this.label1.Location = new System.Drawing.Point(81, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 29);
             this.label1.TabIndex = 0;
@@ -55,7 +62,7 @@
             // txtCheckIn
             // 
             this.txtCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCheckIn.Location = new System.Drawing.Point(224, 78);
+            this.txtCheckIn.Location = new System.Drawing.Point(224, 94);
             this.txtCheckIn.Name = "txtCheckIn";
             this.txtCheckIn.ReadOnly = true;
             this.txtCheckIn.Size = new System.Drawing.Size(564, 36);
@@ -64,7 +71,7 @@
             // txtCheckOut
             // 
             this.txtCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCheckOut.Location = new System.Drawing.Point(224, 146);
+            this.txtCheckOut.Location = new System.Drawing.Point(224, 162);
             this.txtCheckOut.Name = "txtCheckOut";
             this.txtCheckOut.ReadOnly = true;
             this.txtCheckOut.Size = new System.Drawing.Size(564, 36);
@@ -74,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(81, 153);
+            this.label2.Location = new System.Drawing.Point(81, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 29);
             this.label2.TabIndex = 2;
@@ -83,7 +90,7 @@
             // txtRes
             // 
             this.txtRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRes.Location = new System.Drawing.Point(12, 325);
+            this.txtRes.Location = new System.Drawing.Point(12, 341);
             this.txtRes.Multiline = true;
             this.txtRes.Name = "txtRes";
             this.txtRes.ReadOnly = true;
@@ -93,7 +100,7 @@
             // btnCheckIn
             // 
             this.btnCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.Location = new System.Drawing.Point(183, 236);
+            this.btnCheckIn.Location = new System.Drawing.Point(183, 252);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(165, 40);
             this.btnCheckIn.TabIndex = 5;
@@ -104,7 +111,7 @@
             // btnCheckOut
             // 
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.Location = new System.Drawing.Point(354, 236);
+            this.btnCheckOut.Location = new System.Drawing.Point(354, 252);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(165, 40);
             this.btnCheckOut.TabIndex = 6;
@@ -115,7 +122,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(525, 236);
+            this.btnPrint.Location = new System.Drawing.Point(525, 252);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(165, 40);
             this.btnPrint.TabIndex = 7;
@@ -131,7 +138,7 @@
             // 
             this.lbTimer.AutoSize = true;
             this.lbTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimer.Location = new System.Drawing.Point(81, 26);
+            this.lbTimer.Location = new System.Drawing.Point(81, 42);
             this.lbTimer.Name = "lbTimer";
             this.lbTimer.Size = new System.Drawing.Size(62, 25);
             this.lbTimer.TabIndex = 8;
@@ -141,11 +148,61 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.applicationToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(891, 28);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // applicationToolStripMenuItem
+            // 
+            this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printPreviewToolStripMenuItem,
+            this.printToolStripMenuItem,
+            this.exitCtrlXToolStripMenuItem});
+            this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.applicationToolStripMenuItem.Text = "Application";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.printPreviewToolStripMenuItem.Text = "Print Preview (Ctrl+P)";
+            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // exitCtrlXToolStripMenuItem
+            // 
+            this.exitCtrlXToolStripMenuItem.Name = "exitCtrlXToolStripMenuItem";
+            this.exitCtrlXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitCtrlXToolStripMenuItem.Text = "Exit (Ctrl + X)";
+            this.exitCtrlXToolStripMenuItem.Click += new System.EventHandler(this.exitCtrlXToolStripMenuItem_Click);
+            // 
             // checkInCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 639);
+            this.ClientSize = new System.Drawing.Size(891, 658);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCheckOut);
@@ -155,9 +212,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCheckIn);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "checkInCheckOut";
             this.Text = "Check In & Check Out";
             this.Load += new System.EventHandler(this.checkInCheckOut_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +237,12 @@
         private System.Drawing.Printing.PrintDocument printResult;
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitCtrlXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
