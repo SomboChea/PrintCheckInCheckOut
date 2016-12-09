@@ -1,0 +1,7 @@
+﻿this.btnPrint = new System.Windows.Forms.Button();
+this.btnPrint.Location = new System.Drawing.Point(12, 12);
+this.btnPrint.Size = new System.Drawing.Size(125, 23);
+this.btnPrint.Text = "Print Preview";
+this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+this.ClientSize = new System.Drawing.Size(292, 266);
+this.Controls.Add(this.btnPrint);
