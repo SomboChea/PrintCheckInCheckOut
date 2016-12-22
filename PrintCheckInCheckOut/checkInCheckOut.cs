@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using min2Hour;
+using System.IO;
 
 namespace PrintCheckInCheckOut
 {
@@ -26,6 +27,9 @@ namespace PrintCheckInCheckOut
         private double totalMin = 0;
         private string res = "";
         private double pay = 0;
+        bool hasSave = false;
+        string pathName = "";
+        string copyText = "";
 
         //Decleared for Printing Document : 
         PrintDocument document = new PrintDocument();
@@ -35,7 +39,7 @@ namespace PrintCheckInCheckOut
         //Shortcut Key for Print document | Ctrl + P :
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == (Keys.Control | Keys.P))
+            if (keyData == (Keys.Control | Keys.Alt | Keys.P))
             {
                 if(btnPrint.Enabled==true)
                 {
@@ -47,6 +51,28 @@ namespace PrintCheckInCheckOut
                     MessageBox.Show("Cannot Preview Print! Document is nothing!");
                 }
                 
+                return true;
+            }
+
+            if (keyData == (Keys.Control | Keys.P))
+            {
+                if (btnPrint.Enabled == true)
+                {
+                    dialogPrint.Document = document;
+                    if (dialogPrint.ShowDialog() == DialogResult.OK)
+                    {
+                        document.Print();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error while printing...!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cannot Print! Document is nothing!");
+                }
+
                 return true;
             }
 
@@ -68,14 +94,21 @@ namespace PrintCheckInCheckOut
         //Button for Printing Document here :
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            dialogPrint.Document = document;
-            if (dialogPrint.ShowDialog() == DialogResult.OK)
+            if (btnPrint.Enabled == true)
             {
-                document.Print();
+                dialogPrint.Document = document;
+                if (dialogPrint.ShowDialog() == DialogResult.OK)
+                {
+                    document.Print();
+                }
+                else
+                {
+                    MessageBox.Show("Error while printing...!");
+                }
             }
             else
             {
-                MessageBox.Show("Error while printing...!");
+                MessageBox.Show("Cannot Print! Document is nothing!");
             }
         }
 
@@ -99,6 +132,11 @@ namespace PrintCheckInCheckOut
             btnPrint.Enabled = true;
             btnCheckIn.Enabled = true;
             btnCheckOut.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = true;
+            saveToolStripMenuItem.Enabled = true;
+            printPreviewToolStripMenuItem.Enabled = true;
+            printToolStripMenuItem.Enabled = true;
+            copyToolStripMenuItem.Enabled = true;
 
             //Declared for Min to Hour function : 
             min2HourMain stHour = new min2HourMain();
@@ -167,9 +205,118 @@ namespace PrintCheckInCheckOut
             Application.Exit();
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            res = "";
+            txtRes.Text = "";
+            txtCheckIn.Text = "";
+            txtCheckOut.Text = "";
+            btnCheckIn.Enabled = true;
+            btnCheckOut.Enabled = false;
+            btnPrint.Enabled = false;
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+            printToolStripMenuItem.Enabled = false;
+            printPreviewToolStripMenuItem.Enabled = false;
+            newToolStripMenuItem.Enabled = false;
+            openToolStripMenuItem.Enabled = true;
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Filter = "txt files (*.txt)|*.txt|sb files (*.sb)|*.sb|All files (*.*)|*.*";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                txtRes.Text = File.ReadAllText(of.FileName);
+                saveAsToolStripMenuItem.Enabled = true;
+                newToolStripMenuItem.Enabled = true;
+            }
+
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "txt files (*.txt)|*.txt|sb files (*.sb)|*.sb|All files (*.*)|*.*";
+            saveFile.FilterIndex = 1;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFile.FileName, txtRes.Text);
+                saveToolStripMenuItem.Enabled = false;
+                openToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Error while save file!");
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "txt files (*.txt)|*.txt|sb files (*.sb)|*.sb|All files (*.*)|*.*";
+            saveFile.FilterIndex = 1;
+            
+            if (hasSave == true)
+            {
+                if(File.Exists(pathName))
+                {
+                    File.WriteAllText(pathName, txtRes.Text);
+                    MessageBox.Show("Was saved");
+                } else
+                {
+                    MessageBox.Show("File not found!\nPlease save a new!");
+                    saveAsToolStripMenuItem_Click(sender, e);
+                }
+            }
+            else
+            {
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFile.FileName, txtRes.Text);
+                    pathName = saveFile.FileName;
+                    hasSave = true;
+                    openToolStripMenuItem.Enabled = true;
+                    saveToolStripMenuItem.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Error while save file!");
+                }
+            }
+        }
+
+        private void txtRes_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(txtRes.Text);
+            copyText = Clipboard.GetText();
+            pasteToolStripMenuItem.Enabled = true;
+            copyToolStripMenuItem.Enabled = false;
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtRes.Text = copyText;
+            copyToolStripMenuItem.Enabled = false;
+        }
+
+        private void aboutAppToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Created by SamboChea\r\nVersion : 0.0.0.1");
+        }
+
+        private void listHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            License objLin = new License();
+            objLin.ShowDialog();
         }
 
         //Button for CheckIn has here :
@@ -180,6 +327,14 @@ namespace PrintCheckInCheckOut
             btnCheckIn.Enabled = false;
             btnCheckOut.Enabled = true;
             btnPrint.Enabled = false;
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+            openToolStripMenuItem.Enabled = false;
+            newToolStripMenuItem.Enabled = true;
+            printPreviewToolStripMenuItem.Enabled = false;
+            printToolStripMenuItem.Enabled = false;
+            copyToolStripMenuItem.Enabled = false;
+            pasteToolStripMenuItem.Enabled = false;
 
             //Core checkIn code here :
             start = DateTime.Now;
@@ -187,8 +342,7 @@ namespace PrintCheckInCheckOut
             res += "Start Time : " + start + "\r\n";
             start = start.AddMilliseconds(-start.Millisecond);
             start = start.AddSeconds(-start.Second);
-
-            
+          
             txtRes.Text = res;
         }
     }
