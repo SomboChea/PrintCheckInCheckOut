@@ -73,6 +73,16 @@ namespace PrintCheckInCheckOut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap actions_file_document_doc_new_paper {
+            get {
+                object obj = ResourceManager.GetObject("actions_file_document_doc_new_paper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Business_Diploma_1_icon {
             get {
                 object obj = ResourceManager.GetObject("Business-Diploma-1-icon", resourceCulture);
@@ -103,9 +113,29 @@ namespace PrintCheckInCheckOut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_add_256 {
+            get {
+                object obj = ResourceManager.GetObject("document_add_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit_icon_4600 {
             get {
                 object obj = ResourceManager.GetObject("exit-icon-4600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_256 {
+            get {
+                object obj = ResourceManager.GetObject("open_256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

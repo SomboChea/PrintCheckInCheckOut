@@ -44,17 +44,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signInToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.signInToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.registerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,14 +60,26 @@
             this.wrapWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.OpentoolStrip = new System.Windows.Forms.ToolStripButton();
+            this.NewtoolStrip = new System.Windows.Forms.ToolStripButton();
+            this.SavetoolStrip = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.signInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whatsNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.PrinttoolStrip = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -165,7 +172,7 @@
             // 
             this.lbTimer.AutoSize = true;
             this.lbTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimer.Location = new System.Drawing.Point(81, 69);
+            this.lbTimer.Location = new System.Drawing.Point(219, 64);
             this.lbTimer.Name = "lbTimer";
             this.lbTimer.Size = new System.Drawing.Size(62, 25);
             this.lbTimer.TabIndex = 8;
@@ -214,15 +221,6 @@
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Custom_Icon_Design_Pretty_Office_9_Open_file;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
             // signInToolStripMenuItem1
             // 
             this.signInToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -236,31 +234,14 @@
             // signInToolStripMenuItem2
             // 
             this.signInToolStripMenuItem2.Name = "signInToolStripMenuItem2";
-            this.signInToolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.signInToolStripMenuItem2.Size = new System.Drawing.Size(138, 26);
             this.signInToolStripMenuItem2.Text = "Sign In";
             // 
             // registerToolStripMenuItem1
             // 
             this.registerToolStripMenuItem1.Name = "registerToolStripMenuItem1";
-            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.registerToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
             this.registerToolStripMenuItem1.Text = "Register";
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.Image = global::PrintCheckInCheckOut.Properties.Resources.sections_of_website_about_icon;
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Enabled = false;
-            this.saveToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Custom_Icon_Design_Flatastic_9_Save;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -269,16 +250,6 @@
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Enabled = false;
-            this.printToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.printer_icon_986;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.printToolStripMenuItem.Text = "Print";
-            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
@@ -292,15 +263,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
-            // 
-            // exitCtrlXToolStripMenuItem
-            // 
-            this.exitCtrlXToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.exit_icon_4600;
-            this.exitCtrlXToolStripMenuItem.Name = "exitCtrlXToolStripMenuItem";
-            this.exitCtrlXToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.exitCtrlXToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.exitCtrlXToolStripMenuItem.Text = "Exit";
-            this.exitCtrlXToolStripMenuItem.Click += new System.EventHandler(this.exitCtrlXToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -381,26 +343,11 @@
             this.manualToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.manualToolStripMenuItem.Text = "Manual";
             // 
-            // listHelpToolStripMenuItem
-            // 
-            this.listHelpToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Business_Diploma_1_icon;
-            this.listHelpToolStripMenuItem.Name = "listHelpToolStripMenuItem";
-            this.listHelpToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.listHelpToolStripMenuItem.Text = "License";
-            this.listHelpToolStripMenuItem.Click += new System.EventHandler(this.listHelpToolStripMenuItem_Click);
-            // 
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
             this.registerToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             this.registerToolStripMenuItem.Text = "Register";
-            // 
-            // signInToolStripMenuItem
-            // 
-            this.signInToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.exit_icon_4600;
-            this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
-            this.signInToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.signInToolStripMenuItem.Text = "Sign In";
             // 
             // aboutToolStripMenuItem
             // 
@@ -412,6 +359,119 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // checkForUpdateToolStripMenuItem
+            // 
+            this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
+            this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.checkForUpdateToolStripMenuItem.Text = "Check for update";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpentoolStrip,
+            this.NewtoolStrip,
+            this.SavetoolStrip,
+            this.toolStripSeparator4,
+            this.PrinttoolStrip});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(891, 27);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // OpentoolStrip
+            // 
+            this.OpentoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpentoolStrip.Image = global::PrintCheckInCheckOut.Properties.Resources.open_256;
+            this.OpentoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpentoolStrip.Name = "OpentoolStrip";
+            this.OpentoolStrip.Size = new System.Drawing.Size(24, 24);
+            this.OpentoolStrip.Text = "Open Document";
+            this.OpentoolStrip.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // NewtoolStrip
+            // 
+            this.NewtoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NewtoolStrip.Enabled = false;
+            this.NewtoolStrip.Image = global::PrintCheckInCheckOut.Properties.Resources.document_add_256;
+            this.NewtoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NewtoolStrip.Name = "NewtoolStrip";
+            this.NewtoolStrip.Size = new System.Drawing.Size(24, 24);
+            this.NewtoolStrip.Text = "New Document";
+            this.NewtoolStrip.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // SavetoolStrip
+            // 
+            this.SavetoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SavetoolStrip.Enabled = false;
+            this.SavetoolStrip.Image = global::PrintCheckInCheckOut.Properties.Resources.Custom_Icon_Design_Flatastic_9_Save;
+            this.SavetoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SavetoolStrip.Name = "SavetoolStrip";
+            this.SavetoolStrip.Size = new System.Drawing.Size(24, 24);
+            this.SavetoolStrip.Text = "Save";
+            this.SavetoolStrip.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Custom_Icon_Design_Pretty_Office_9_Open_file;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Image = global::PrintCheckInCheckOut.Properties.Resources.sections_of_website_about_icon;
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Custom_Icon_Design_Flatastic_9_Save;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Enabled = false;
+            this.printToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.printer_icon_986;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // exitCtrlXToolStripMenuItem
+            // 
+            this.exitCtrlXToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.exit_icon_4600;
+            this.exitCtrlXToolStripMenuItem.Name = "exitCtrlXToolStripMenuItem";
+            this.exitCtrlXToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.exitCtrlXToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.exitCtrlXToolStripMenuItem.Text = "Exit";
+            this.exitCtrlXToolStripMenuItem.Click += new System.EventHandler(this.exitCtrlXToolStripMenuItem_Click);
+            // 
+            // listHelpToolStripMenuItem
+            // 
+            this.listHelpToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Business_Diploma_1_icon;
+            this.listHelpToolStripMenuItem.Name = "listHelpToolStripMenuItem";
+            this.listHelpToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.listHelpToolStripMenuItem.Text = "License";
+            this.listHelpToolStripMenuItem.Click += new System.EventHandler(this.listHelpToolStripMenuItem_Click);
+            // 
+            // signInToolStripMenuItem
+            // 
+            this.signInToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.exit_icon_4600;
+            this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
+            this.signInToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.signInToolStripMenuItem.Text = "Sign In";
+            // 
             // aboutAppToolStripMenuItem
             // 
             this.aboutAppToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.sections_of_website_about_icon;
@@ -420,12 +480,6 @@
             this.aboutAppToolStripMenuItem.Text = "About App";
             this.aboutAppToolStripMenuItem.Click += new System.EventHandler(this.aboutAppToolStripMenuItem_Click);
             // 
-            // checkForUpdateToolStripMenuItem
-            // 
-            this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
-            this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.checkForUpdateToolStripMenuItem.Text = "Check for update";
-            // 
             // whatsNewToolStripMenuItem
             // 
             this.whatsNewToolStripMenuItem.Image = global::PrintCheckInCheckOut.Properties.Resources.Whats_New___Bull_Horn;
@@ -433,11 +487,28 @@
             this.whatsNewToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.whatsNewToolStripMenuItem.Text = "What\'s New?";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // PrinttoolStrip
+            // 
+            this.PrinttoolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PrinttoolStrip.Enabled = false;
+            this.PrinttoolStrip.Image = global::PrintCheckInCheckOut.Properties.Resources.printer_icon_986;
+            this.PrinttoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PrinttoolStrip.Name = "PrinttoolStrip";
+            this.PrinttoolStrip.Size = new System.Drawing.Size(24, 24);
+            this.PrinttoolStrip.Text = "Print Document";
+            this.PrinttoolStrip.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
             // checkInCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 658);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCheckOut);
@@ -455,6 +526,8 @@
             this.Load += new System.EventHandler(this.checkInCheckOut_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,6 +577,12 @@
         private System.Windows.Forms.ToolStripMenuItem signInToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton OpentoolStrip;
+        private System.Windows.Forms.ToolStripButton NewtoolStrip;
+        private System.Windows.Forms.ToolStripButton SavetoolStrip;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton PrinttoolStrip;
     }
 }
 

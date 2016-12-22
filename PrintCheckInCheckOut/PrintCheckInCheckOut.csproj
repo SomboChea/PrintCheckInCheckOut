@@ -94,6 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="com.txt" />
+    <None Include="Resources\open_256.png" />
+    <None Include="Resources\document_add_256.png" />
+    <None Include="Resources\actions_file_document_doc_new_paper.png" />
     <None Include="Resources\Whats New - Bull Horn.png" />
     <None Include="Resources\sections-of-website-about-icon.png" />
     <None Include="Resources\exit-icon-4600.png" />

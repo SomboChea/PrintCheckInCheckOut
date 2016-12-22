@@ -134,8 +134,10 @@ namespace PrintCheckInCheckOut
             btnCheckOut.Enabled = false;
             saveAsToolStripMenuItem.Enabled = true;
             saveToolStripMenuItem.Enabled = true;
+            SavetoolStrip.Enabled = true;
             printPreviewToolStripMenuItem.Enabled = true;
             printToolStripMenuItem.Enabled = true;
+            PrinttoolStrip.Enabled = true;
             copyToolStripMenuItem.Enabled = true;
 
             //Declared for Min to Hour function : 
@@ -216,10 +218,14 @@ namespace PrintCheckInCheckOut
             btnPrint.Enabled = false;
             saveToolStripMenuItem.Enabled = false;
             saveAsToolStripMenuItem.Enabled = false;
+            SavetoolStrip.Enabled = false;
             printToolStripMenuItem.Enabled = false;
             printPreviewToolStripMenuItem.Enabled = false;
+            PrinttoolStrip.Enabled = false;
             newToolStripMenuItem.Enabled = false;
+            NewtoolStrip.Enabled = false;
             openToolStripMenuItem.Enabled = true;
+            hasSave = false;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,6 +237,10 @@ namespace PrintCheckInCheckOut
                 txtRes.Text = File.ReadAllText(of.FileName);
                 saveAsToolStripMenuItem.Enabled = true;
                 newToolStripMenuItem.Enabled = true;
+                NewtoolStrip.Enabled = true;
+                printPreviewToolStripMenuItem.Enabled = true;
+                PrinttoolStrip.Enabled = true;
+                printToolStripMenuItem.Enabled = true;
             }
 
         }
@@ -239,13 +249,15 @@ namespace PrintCheckInCheckOut
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "txt files (*.txt)|*.txt|sb files (*.sb)|*.sb|All files (*.*)|*.*";
-            saveFile.FilterIndex = 1;
+            saveFile.FilterIndex = 2;
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(saveFile.FileName, txtRes.Text);
                 saveToolStripMenuItem.Enabled = false;
+                SavetoolStrip.Enabled = false;
                 openToolStripMenuItem.Enabled = true;
+                pathName = saveFile.FileName;
             }
             else
             {
@@ -257,18 +269,21 @@ namespace PrintCheckInCheckOut
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "txt files (*.txt)|*.txt|sb files (*.sb)|*.sb|All files (*.*)|*.*";
-            saveFile.FilterIndex = 1;
+            saveFile.FilterIndex = 2;
             
             if (hasSave == true)
             {
                 if(File.Exists(pathName))
                 {
                     File.WriteAllText(pathName, txtRes.Text);
+                    SavetoolStrip.Enabled = false;
+                    saveToolStripMenuItem.Enabled = false;
                     MessageBox.Show("Was saved");
                 } else
                 {
                     MessageBox.Show("File not found!\nPlease save a new!");
                     saveAsToolStripMenuItem_Click(sender, e);
+
                 }
             }
             else
@@ -280,6 +295,7 @@ namespace PrintCheckInCheckOut
                     hasSave = true;
                     openToolStripMenuItem.Enabled = true;
                     saveToolStripMenuItem.Enabled = false;
+                    SavetoolStrip.Enabled = false;
                 }
                 else
                 {
@@ -330,9 +346,13 @@ namespace PrintCheckInCheckOut
             saveToolStripMenuItem.Enabled = false;
             saveAsToolStripMenuItem.Enabled = false;
             openToolStripMenuItem.Enabled = false;
+            OpentoolStrip.Enabled = false;
+            SavetoolStrip.Enabled = false;
             newToolStripMenuItem.Enabled = true;
+            NewtoolStrip.Enabled = true;
             printPreviewToolStripMenuItem.Enabled = false;
             printToolStripMenuItem.Enabled = false;
+            PrinttoolStrip.Enabled = false;
             copyToolStripMenuItem.Enabled = false;
             pasteToolStripMenuItem.Enabled = false;
 
