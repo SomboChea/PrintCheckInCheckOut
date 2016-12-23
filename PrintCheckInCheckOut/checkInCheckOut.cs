@@ -54,7 +54,7 @@ namespace PrintCheckInCheckOut
                 return true;
             }
 
-            if (keyData == (Keys.Control | Keys.P))
+            if (keyData == (Keys.Control | Keys.Shift | Keys.P))
             {
                 if (btnPrint.Enabled == true)
                 {
@@ -94,22 +94,24 @@ namespace PrintCheckInCheckOut
         //Button for Printing Document here :
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (btnPrint.Enabled == true)
-            {
-                dialogPrint.Document = document;
-                if (dialogPrint.ShowDialog() == DialogResult.OK)
-                {
-                    document.Print();
-                }
-                else
-                {
-                    MessageBox.Show("Error while printing...!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Cannot Print! Document is nothing!");
-            }
+            dialogPrint.Document = document;
+            document.Print();
+            //if (btnPrint.Enabled == true)
+            //{
+            //    dialogPrint.Document = document;
+            //    if (dialogPrint.ShowDialog() == DialogResult.OK)
+            //    {
+            //        document.Print();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Error while printing...!");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Cannot Print! Document is nothing!");
+            //}
         }
 
         //Set for timer
@@ -192,14 +194,28 @@ namespace PrintCheckInCheckOut
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dialogPrint.Document = document;
-            if (dialogPrint.ShowDialog() == DialogResult.OK)
+            if (PrinttoolStrip.Pressed)
             {
                 document.Print();
-            }
-            else
+            } else
             {
-                MessageBox.Show("Error while printing...!");
+                if (btnPrint.Enabled == true)
+                {
+                    if (dialogPrint.ShowDialog() == DialogResult.OK)
+                    {
+                        document.Print();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error while printing...!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cannot Print! Document is nothing!");
+                }
             }
+            
         }
 
         private void exitCtrlXToolStripMenuItem_Click(object sender, EventArgs e)
